@@ -1,0 +1,53 @@
+.selectCourse-container{
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    background-color: #d9eee1;
+    padding: 2rem;
+}
+.selectCourse-container .right-div{
+    background-color: #e7e9eb;
+    padding: 1rem 3rem;
+}
+
+.selectCourse-container .right-div img{
+    border-left: 2px solid #E72F3E;
+    height: 40vh;
+}
+.selectCourse-container .right-div button{
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #E72F3E;
+    font-size: 1rem;
+    margin: 1rem 1rem;
+    font-weight: bold;
+}
+.selectCourse-container .left-div{   
+    padding: 0rem 5rem;
+    text-align: center;
+}
+.selectCourse-container .left-div h1{
+    font-size: 3rem;
+}
+.selectCourse-container .left-div button{
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #E72F3E;
+    font-size: 1rem;
+    margin: 1rem 1rem;
+    font-weight: bold;
+}
+.selectCourse-container .left-div>:nth-child(5){
+    background-color: #059862;
+}
+.selectCourse-container .left-div>:nth-child(7){
+    background-color: #282A35;
+}
+
+
