@@ -3,8 +3,9 @@
     height: 80vh; 
     text-align: center; 
     padding-top: 20vh;
-    /* background-color: rgb(83, 82, 82); */
+    color: white;
   }
+
   .landingPage-div h1{
     padding: 0% 10%;
     font-size: 4.5rem;
@@ -18,7 +19,7 @@
     font-size: 1.5rem;
     padding: 0% 25%;
     margin-top: 3vh;
-  
+    color: rgb(228, 228, 175);
   }
   .landingPage-div button{
     padding: 1.5rem 2rem;
