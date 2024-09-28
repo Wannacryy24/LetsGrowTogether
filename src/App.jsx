@@ -10,11 +10,11 @@ export default function App(){
   
   return (
     <SectionProvider>
-      <div className="container">
+      <div className="container" style={{background: `url('/bg.webp')`}}>
         <HeaderComponent/>
         <LandingPage/>
-        <SectionPage/>
       </div>
+        <SectionPage/>
     </SectionProvider>
   );
 }
