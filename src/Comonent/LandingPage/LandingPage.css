@@ -3,16 +3,15 @@
     height: 80vh; 
     text-align: center; 
     padding-top: 20vh;
-   
-   
   }
   .landingPage-div h1{
-    padding: 0% 20%;
+    padding: 0% 10%;
     font-size: 4.5rem;
-     line-height: 10vh;
+    line-height: 10vh;
   }
   .landingPage-div h1 span{
-    color: hsl(215.62deg 94.81% 54.71%);
+    color: #22B0DD;
+    /* color: hsl(215.62deg 94.81% 54.71%); */
   }
   .landingPage-div p{
     font-size: 1.5rem;
@@ -23,7 +22,7 @@
   .landingPage-div button{
     padding: 1.5rem 2rem;
     border-radius: 3rem;
-    background-color: hsl(215.62deg 94.81% 54.71%);
+    background-color: #22B0DD;
     border: none;
     color: white;
     font-size: 1rem;
