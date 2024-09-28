@@ -4,7 +4,8 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #232323;
+  background-color: #232323e3;
+  
   color:white;
   border-radius: 5rem;
   width: 70vw;

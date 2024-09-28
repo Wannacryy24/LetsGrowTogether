@@ -35,9 +35,7 @@ const SectionPage = () => {
   };
 
 
-  const handleTopicClick = (topic) => {
-    setSelectedTopic(topic);  
-  };
+ 
 
 
   return (
