@@ -1,25 +1,27 @@
-import './Header.css'
+import React from 'react';
+import Image from '../SharedComponent/Image';
+import Li from '../SharedComponent/Li';
+import './Header.css';
 
-export function HeaderComponent(){
-    return(
+const liData = ['Job Seeker', 'Enterprise', 'Training', 'Pricing'];
+
+export function HeaderComponent() {
+    return (
         <header>
             <div>
-                <img src="https://myinterviewpractice.com/images/mipLogoNew.svg" alt="" />
-
-                
+                <Image src="https://myinterviewpractice.com/images/mipLogoNew.svg" alt="" />
             </div>
             <div>
                 <ul>
-                    <li>Job Seeker</li>
-                    <li>Enterprise</li>
-                    <li>Training</li>
-                    <li>Pricing</li> 
+                    {liData.map(item => (
+                        <Li className={item} key={item} item={item}/>
+                    ))}
                 </ul>
             </div>
             <div className="right-div">
                 <button>Sign In</button>
-                <button>Start For free</button>
+                <button>Start For Free</button>
             </div>
         </header>
     )
-}   
+}
