@@ -29,7 +29,7 @@ const SectionPage = () => {
       .then((data) => {
         setTopics(data.topics);   
         setSelectedSection(sectionId);  
-        setSelectedTopic(null);  
+        setSelectedTopic(data.topics[0]);  
       })
       .catch((error) => console.error('Error fetching topics:', error));
   };
