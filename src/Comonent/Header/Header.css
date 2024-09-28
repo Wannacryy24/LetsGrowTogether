@@ -1,0 +1,33 @@
+
+  header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header img{
+    width: 10vw;
+    height: 10vw;
+  }
+  header ul{
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+    font-size: 1.2rem;
+   
+  }
+  .right-div button{
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    border: none;
+    outline: none;
+    background-color: white;
+    font-size: 1rem;
+    margin: 0rem 1rem;
+    font-weight: bold;
+  
+  }
+  .right-div>:nth-child(2){
+    border-radius: 3rem;
+    background-color: #E72F3E;
+    color: white;
+  }  
