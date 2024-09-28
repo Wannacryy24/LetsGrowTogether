@@ -9,10 +9,12 @@
 .selectCourse-container .right-div{
     background-color: #e7e9eb;
     padding: 1rem 3rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .selectCourse-container .right-div img{
-    border-left: 2px solid #E72F3E;
+    border-left: 2px solid hsl(215.62deg 94.81% 54.71%);
     height: 40vh;
 }
 .selectCourse-container .right-div button{
@@ -21,7 +23,7 @@
     border: none;
     outline: none;
     color: white;
-    background-color: #E72F3E;
+    background-color: hsl(215.62deg 94.81% 54.71%);
     font-size: 1rem;
     margin: 1rem 1rem;
     font-weight: bold;
@@ -29,6 +31,11 @@
 .selectCourse-container .left-div{   
     padding: 0rem 5rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 10vh;
 }
 .selectCourse-container .left-div h1{
     font-size: 3rem;
@@ -39,16 +46,11 @@
     border: none;
     outline: none;
     color: white;
-    background-color: #E72F3E;
+    background-color: hsl(215.62deg 94.81% 54.71%);
     font-size: 1rem;
     margin: 1rem 1rem;
     font-weight: bold;
 }
-.selectCourse-container .left-div>:nth-child(5){
-    background-color: #059862;
-}
-.selectCourse-container .left-div>:nth-child(7){
-    background-color: #282A35;
-}
+
 
 

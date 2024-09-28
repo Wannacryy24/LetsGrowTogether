@@ -10,7 +10,7 @@ export function HeaderComponent() {
     return (
         <header>
             <div>
-                <Image src="/lgt.png" alt="" className={'header-logo'}/>
+                <Image src="public/lgt-removebg-preview.png" alt="" className={'header-logo'}/>
             </div>
             <div>
                 <ul>
@@ -20,8 +20,11 @@ export function HeaderComponent() {
                 </ul>
             </div>
             <div className="right-div">
-                <Button>Sign In</Button>
-                <Button>Start For Free</Button>
+                <div className="search-container">
+                    <input type="search" placeholder='Search' />
+                    <i className="fa-solid fa-magnifying-glass search-icon"></i>
+                </div>
+                <Button>Log in</Button>                
             </div>
         </header>
     )

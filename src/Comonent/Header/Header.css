@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 header{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border: solid;
   background-color: #232323;
@@ -9,14 +10,18 @@ header{
   width: 70vw;
   height: 10vh;
   position: fixed;
-  left: 15vw;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  top: 2vh;
+  padding: 0rem 1rem;
+  margin: 0% 15%;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
 }
 
 .header-logo{
   height: 3.5rem;
   width: 3.5rem;
+  
 }
 
   header ul{
@@ -25,9 +30,46 @@ header{
     gap: 30px;
     font-size: 1.2rem;
   }
-  
+  .right-div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
    header .right-div>:nth-child(2){
     border-radius: 3rem;
-    background-color: #E72F3E;
+    background-color: hsl(215.62deg 94.81% 54.71%);
     color: white;
   }  
+  header .right-div button{
+    padding: 0.7rem 2rem;
+    border-radius: 3rem;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: hsl(215.62deg 94.81% 54.71%);
+    font-size: 1rem;  
+    font-weight: bold;
+  }
+  header .right-div input{
+    width: 17vw;
+    height: 6vh;
+    border-radius: 5rem;  
+    position: relative;
+    border: 2px solid hsl(0, 0%, 23%);   
+    outline: none;
+    padding-left: 3%;
+    font-weight: bold;
+    background-color: #232323;
+  }
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .search-icon {
+    position: absolute;
+    right: 15px;
+    padding: 0.3rem;
+    border-radius: 5rem;
+   background-color: hsl(0, 0%, 23%);
+  } 

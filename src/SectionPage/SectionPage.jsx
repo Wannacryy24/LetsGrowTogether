@@ -9,11 +9,11 @@ const SectionPage = () => {
           <div className='left-div'>
             <h1>{item}</h1>
             <p>The language for building web pages</p>
-            <Button>Learn {item}</Button><br></br>
+            <Button>Learn {item}</Button>
           </div>
           <div className='right-div'>
             <h1>HTML Example</h1>
-            <Image src="public/html-ss1.png" alt=""/><br/>
+            <Image src="public/html-ss1.png" alt=""/>
             <Button>Try it yourself</Button> 
           </div>
         </div>
