@@ -1,27 +1,17 @@
-import { createContext, useReducer } from 'react';
+import { createContext, useReducer, useRef, useState } from 'react';
 export const SectionContext = createContext();
 
-const initialState = {
-  section: null, 
-  topic: null   
-};
-
-function sectionReducer(state, action) {
-  switch (action.type) {
-    case 'Set_Section':
-      return { ...state, section: action.section, topic: null }; 
-    case 'Set_Topic':
-      return { ...state, topic: action.topic };
-    default:
-      return state;
-  }
-}
-
 export const SectionProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(sectionReducer, initialState);
+  const ref = useRef();
+  const [sections, setSections] = useState([]);  
+  const [selectedSection, setSelectedSection] = useState(null); 
+  const [topics, setTopics] = useState([]);  
+  const [selectedTopic, setSelectedTopic] = useState(null);  
+  
+
 
   return (
-    <SectionContext.Provider value={{ state, dispatch }}>
+    <SectionContext.Provider value={{ sections, setSections ,selectedTopic, setSelectedTopic,selectedSection, setSelectedSection ,topics, setTopics, ref}}>
       {children}
     </SectionContext.Provider>
   );

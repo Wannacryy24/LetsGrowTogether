@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: solid;
   background-color: #232323;
   color:white;
   border-radius: 5rem;
@@ -37,7 +37,7 @@ header{
   }
    header .right-div>:nth-child(2){
     border-radius: 3rem;
-    background-color: hsl(215.62deg 94.81% 54.71%);
+    background-color: #22B0DD;
     color: white;
   }  
   header .right-div button{
@@ -46,7 +46,7 @@ header{
     border: none;
     outline: none;
     color: white;
-    background-color: hsl(215.62deg 94.81% 54.71%);
+    background-color: #22B0DD;
     font-size: 1rem;  
     font-weight: bold;
   }
