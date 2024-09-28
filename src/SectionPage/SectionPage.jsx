@@ -1,22 +1,23 @@
+import Button from "../Comonent/SharedComponent/Button";
+import Image from "../Comonent/SharedComponent/Image";
+import './SectionPage.css'
 const sections = ['HTML', 'CSS', 'JavaScript', 'React'];
 const SectionPage = () => {
   return (
-    <div>
-      <div className="section-container">
-        {sections.map(section => (
-          <div
-            key={section}
-            className="section-item"
-            onClick={() => handleSectionClick(section)}
-          >
-            {section}
+      sections.map(item=>(
+        <div className="selectCourse-container" key={item}>
+          <div className='left-div'>
+            <h1>{item}</h1>
+            <p>The language for building web pages</p>
+            <Button>Learn {item}</Button><br></br>
           </div>
-        ))}
-      </div>
-
-      
-    </div>
+          <div className='right-div'>
+            <h1>HTML Example</h1>
+            <Image src="public/html-ss1.png" alt=""/><br/>
+            <Button>Try it yourself</Button> 
+          </div>
+        </div>
+      ))
   );
 };
-
 export default SectionPage;

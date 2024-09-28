@@ -10,7 +10,7 @@ export function HeaderComponent() {
     return (
         <header>
             <div>
-                <Image src="https://myinterviewpractice.com/images/mipLogoNew.svg" alt="" />
+                <Image src="/lgt.png" alt="" className={'header-logo'}/>
             </div>
             <div>
                 <ul>
