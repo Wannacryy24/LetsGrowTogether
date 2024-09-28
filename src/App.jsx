@@ -1,11 +1,11 @@
-import Header from "./Header";
-import Landing from "./Landing";
+import { HeaderComponent } from "./Comonent/Header/Header";
+// import Landing from "./Landing";
 
 export default function App(){
   return (
     <div className="container">
-    <Header/>
-    <Landing/>
+      <HeaderComponent/>
+    {/* <Landing/> */}
     </div>
   );
 }
