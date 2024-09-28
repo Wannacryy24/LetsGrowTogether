@@ -1,31 +1,31 @@
+header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: solid;
+  background-color: #232323;
+  color:white;
+  border-radius: 5rem;
+  width: 70vw;
+  height: 10vh;
+  position: fixed;
+  left: 15vw;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
+}
 
-  header{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  header img{
-    width: 10vw;
-    height: 10vw;
-  }
+.header-logo{
+  height: 4rem;
+  width: 4rem;
+}
+
   header ul{
     display: flex;
     list-style-type: none;
     gap: 30px;
     font-size: 1.2rem;
-   
   }
-  header .right-div button{
-    padding: 1rem 2rem;
-    border-radius: 3rem;
-    border: none;
-    outline: none;
-    background-color: white;
-    font-size: 1rem;
-    margin: 0rem 1rem;
-    font-weight: bold;
   
-  }
    header .right-div>:nth-child(2){
     border-radius: 3rem;
     background-color: #E72F3E;
