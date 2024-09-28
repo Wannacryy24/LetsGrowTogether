@@ -12,7 +12,7 @@ export function HeaderComponent() {
     return (
         <header>
             <div>
-                <Image src="public/lgt-removebg-preview.png" alt="" className={'header-logo'}/>
+                <Image src="/lgt-removebg-preview.png" alt="" className={'header-logo'}/>
             </div>
             <div>
                 <ul>
