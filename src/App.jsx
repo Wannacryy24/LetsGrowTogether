@@ -6,6 +6,7 @@ export default function App(){
     <div className="container">
       <HeaderComponent/>
       <LandingPage/>
+      <div></div>
     </div>
   );
 }
