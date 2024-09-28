@@ -4,8 +4,9 @@ import Landing from "./Landing";
 export default function App(){
   return (
     <div className="container">
-    <Header/>
-    <Landing/>
+      <HeaderComponent/>
+      <LandingPage/>
+      <div></div>
     </div>
   );
 }
