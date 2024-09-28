@@ -2,6 +2,7 @@ import React from 'react';
 import Image from '../SharedComponent/Image';
 import Li from '../SharedComponent/Li';
 import './Header.css';
+import Button from '../SharedComponent/Button';
 
 const liData = ['Job Seeker', 'Enterprise', 'Training', 'Pricing'];
 
@@ -19,8 +20,8 @@ export function HeaderComponent() {
                 </ul>
             </div>
             <div className="right-div">
-                <button>Sign In</button>
-                <button>Start For Free</button>
+                <Button>Sign In</Button>
+                <Button>Start For Free</Button>
             </div>
         </header>
     )
