@@ -3,6 +3,7 @@ import Image from "../Comonent/SharedComponent/Image";
 import './SectionPage.css'
 const sections = ['HTML', 'CSS', 'JavaScript', 'React'];
 const SectionPage = () => {
+  
   return (
       sections.map(item=>(
         <div className="selectCourse-container" key={item}>
