@@ -7,6 +7,8 @@ export default function App(){
     <div className="container">
       <HeaderComponent/>
       <LandingPage/>
+      <SelectCourse/>
+      <div></div>
     </div>
   );
 }
