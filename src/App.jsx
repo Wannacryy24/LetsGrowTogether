@@ -1,6 +1,5 @@
 import { HeaderComponent } from "./Comonent/Header/Header";
 import { LandingPage } from "./Comonent/LandingPage/landingPage";
-import { SelectCourse } from "./Comonent/HomePage/HomePage";
 
 export default function App(){
   return (
@@ -10,5 +9,6 @@ export default function App(){
       <SelectCourse/>
       <div></div>
     </div>
+    
   );
 }
