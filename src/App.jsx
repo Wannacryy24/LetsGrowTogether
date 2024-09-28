@@ -6,7 +6,7 @@ export default function App(){
     <div className="container">
       <HeaderComponent/>
       <LandingPage/>
-      <SelectCourse/>
+      {/* <SelectCourse/> */}
       <div></div>
     </div>
     
