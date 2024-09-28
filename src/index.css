@@ -4,6 +4,6 @@
     box-sizing: border-box; 
 }
 .container{
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: -3vh;
 }
