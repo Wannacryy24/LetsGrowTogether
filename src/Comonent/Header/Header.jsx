@@ -23,5 +23,5 @@ export function HeaderComponent() {
                 <button>Start For Free</button>
             </div>
         </header>
-    );
+    )
 }
