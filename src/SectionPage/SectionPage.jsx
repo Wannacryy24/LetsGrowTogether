@@ -51,7 +51,7 @@ const SectionPage = () => {
           </div>
           <div className="right-div">
             <h1>{item.name} Example</h1>
-            <Image src={`public/${item.id}-ss1.png`} alt="" /><br />
+            <Image src={`public/html-ss1.png`} alt="" /><br />
             <Button>Try it yourself</Button>
           </div>
         </div>
