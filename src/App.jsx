@@ -4,17 +4,34 @@ import { LandingPage } from "./Comonent/LandingPage/landingPage";
 import SectionPage from "./SectionPage/SectionPage";
 import { makeServer } from "./Data/data";
 import { SectionProvider } from "./ContextProvider/SectionContext";
+import {Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import PageNotFound from "./Comonent/PageNotFound/PageNotFound";
+import Topics from "./Comonent/Topics/Topics";
 
 makeServer();
 export default function App(){
   
   return (
-    <SectionProvider>
-      <div className="container" style={{background: `url('/bg.webp')`}}>
-        <HeaderComponent/>
-        <LandingPage/>
-      </div>
-        <SectionPage/>
-    </SectionProvider>
+    
+    <Router>
+      <Routes>
+        <Route 
+          path='/'
+          element={
+            <>
+              <div className="container" style={{background: `url('/bg.webp')`}}>
+                <HeaderComponent/>
+                <LandingPage/>
+                </div>
+                <SectionPage/>
+            </>
+          }
+        />
+        <Route path="*" element={<PageNotFound></PageNotFound>}/>
+        {/* <Route path='/sections' element={<Topics></Topics>}/> */}
+        <Route path="/section/:sectionId" element={<Topics />} />
+        <Route path="/section/:sectionId/Topics/:title" element={<Topics/>}/>
+      </Routes>
+    </Router>
   );
 }

@@ -2,15 +2,18 @@
     display: flex;
     justify-content: center;
     gap: 4rem;
-    background-color: #1c1c1c;
+    background-color: #282a35;
     padding: 2rem;
-    color: white; 
+    color: #e7e9eb;  
+    background: url('/bg.webp')  
+   
 }
 .selectCourse-container .right-div{
-    background-color: #e7e9eb;
-    padding: 1rem 3rem;
+    background-color: #2f323e5c;
+    padding: 1rem 10rem;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
 }
 
 .selectCourse-container .right-div img{
@@ -53,5 +56,17 @@
     font-weight: bold;
 }
 
-
+@media screen and (max-width: 600px) {
+    .selectCourse-container{
+        flex-direction: column;
+        gap: 0rem;
+    }
+    .selectCourse-container .right-div{
+        padding: 0px;
+    }
+    .selectCourse-container .right-div button{
+        margin: 0rem;
+    }
+   
+  } 
 

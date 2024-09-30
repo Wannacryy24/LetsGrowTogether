@@ -4,19 +4,19 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #232323e3;
-  
+  background-color: #232323e3;  
   color:white;
-  border-radius: 5rem;
-  width: 70vw;
+  /* border-radius: 5rem; */
+  width: 100vw;
   height: 10vh;
-  position: fixed;
+  /* position: fixed; */
   top: 2vh;
   padding: 0rem 1rem;
-  margin: 0% 15%;
+  /* margin: 0% 15%; */
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
+  border-bottom: 1px solid #c8c8c8;
 }
 
 
@@ -74,4 +74,11 @@ header{
     padding: 0.3rem;
     border-radius: 5rem;
    background-color: hsl(0, 0%, 23%);
+  } 
+
+  @media screen and (max-width: 600px) {
+    
+    header ul{
+      display: none;
+    }
   } 
