@@ -2,9 +2,9 @@
     display: flex;
     justify-content: center;
     gap: 4rem;
-    background-color: #d9eee1;
+    background-color: #1c1c1c;
     padding: 2rem;
-    
+    color: white; 
 }
 .selectCourse-container .right-div{
     background-color: #e7e9eb;
@@ -39,6 +39,7 @@
 }
 .selectCourse-container .left-div h1{
     font-size: 3rem;
+    color: white;
 }
 .selectCourse-container .left-div button{
     padding: 1rem 2rem;
