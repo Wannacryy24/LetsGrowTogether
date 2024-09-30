@@ -8,11 +8,9 @@ import { SectionContext } from "../ContextProvider/SectionContext";
 
 
 makeServer();
-
 const SectionPage = () => {
 
- const {sections, setSections ,selectedTopic, setSelectedTopic,selectedSection, setSelectedSection ,topics, setTopics} =  useContext(SectionContext);
-
+const {sections, setSections ,selectedTopic, setSelectedTopic,selectedSection, setSelectedSection ,topics, setTopics} =  useContext(SectionContext);
 
   useEffect(() => {
     fetch('/api/sections')
@@ -33,9 +31,6 @@ const SectionPage = () => {
       })
       .catch((error) => console.error('Error fetching topics:', error));
   };
-
-
- 
 
 
   return (

@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from '../SharedComponent/Image';
 import Li from '../SharedComponent/Li';
 import './Header.css';
 import Button from '../SharedComponent/Button';
+import { SectionContext } from '../../ContextProvider/SectionContext';
 
 const liData = ['Job Seeker', 'Enterprise', 'Training', 'Pricing'];
 
 export function HeaderComponent() {
+    const {selectedSection} = useContext(SectionContext);
     return (
         <header>
             <div>
-                <Image src="public/lgt-removebg-preview.png" alt="" className={'header-logo'}/>
+                <Image src="/lgt-removebg-preview.png" alt="" className={'header-logo'}/>
             </div>
             <div>
                 <ul>
