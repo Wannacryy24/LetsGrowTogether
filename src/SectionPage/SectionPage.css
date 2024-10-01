@@ -91,7 +91,7 @@
     .page-container{
         flex-direction: column;
         justify-content: center;
-        margin-top: 30vh;
+        margin-top: 0vh;
     }
     .selectCourse-container{
         width: 80vw;
