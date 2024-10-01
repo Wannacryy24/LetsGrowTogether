@@ -1,19 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+:root {
+  --primaryColor: #232323e3;
+  --secondaryColor: #22B0DD;
+  --textColor: #c8c8c8;
+  --white: #ffffff; 
+}
+
+
+
 header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1b1d24;  
-  color:white;
-  width: 100%;
+  background-color: var(--primaryColor); 
+  color: var(--white);
+  width: 100vw;
   height: 10vh;
   top: 2vh;
   padding: 0rem 1rem;
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
-  /* border-bottom: 1px solid #141616; */
+  border-bottom: 1px solid var(--textColor);
 }
 
 
@@ -36,16 +45,16 @@ header{
   }
    header .right-div>:nth-child(2){
     border-radius: 3rem;
-    background-color: #22B0DD;
-    color: white;
+    background-color: var(--secondaryColor);
+    color: var(--white);
   }  
   header .right-div button{
     padding: 0.7rem 2rem;
     border-radius: 3rem;
     border: none;
     outline: none;
-    color: white;
-    background-color: #22B0DD;
+    color: var(--white);
+    background-color: var(--secondaryColor);
     font-size: 1rem;  
     font-weight: bold;
   }
@@ -58,7 +67,7 @@ header{
     outline: none;
     padding-left: 3%;
     font-weight: bold;
-    background-color: #232323;
+    background-color: var(--primaryColor);
   }
   .search-container {
     position: relative;
