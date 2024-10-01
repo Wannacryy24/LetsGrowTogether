@@ -5,7 +5,6 @@ import './Header.css';
 import Button from '../SharedComponent/Button';
 import { SectionContext } from '../../ContextProvider/SectionContext';
 import { Navigate, useNavigate } from 'react-router-dom';
-
 const liData = ['Job Seeker', 'Enterprise', 'Training', 'Pricing'];
 
 export function HeaderComponent() {

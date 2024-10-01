@@ -6,12 +6,11 @@ export function makeServer() {
       this.namespace = 'api';
 
       let sections = [
-        { id: '1', name: 'HTML' },
-        { id: '2', name: 'CSS' },
-        { id: '3', name: 'JavaScript' },
-        { id: '4', name: 'React' },
+        { id: '1', name: 'HTML' , img:'html.png'},
+        { id: '2', name: 'CSS' , img:'css.png'},
+        { id: '3', name: 'JavaScript' , img:'javascript.png'},
+        { id: '4', name: 'React' , img:'react.png'},
       ];
-
       let topics = {
         '1': [
           {

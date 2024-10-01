@@ -18,10 +18,3 @@
     top: 11vh;
     right: 01vw;
 }
-
-.cursor{
-    background-color: red;
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-}
