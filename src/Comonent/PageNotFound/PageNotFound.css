@@ -1,0 +1,27 @@
+.pageNotFound{
+    height: 90vh;
+}
+.pageNotFound div{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.go-home-btn{
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 11vh;
+    right: 01vw;
+}
+
+.cursor{
+    background-color: red;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}

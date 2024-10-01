@@ -4,15 +4,17 @@ import Li from '../SharedComponent/Li';
 import './Header.css';
 import Button from '../SharedComponent/Button';
 import { SectionContext } from '../../ContextProvider/SectionContext';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const liData = ['Job Seeker', 'Enterprise', 'Training', 'Pricing'];
 
 export function HeaderComponent() {
+    const navigate = useNavigate();
     const {selectedSection} = useContext(SectionContext);
     return (
         <header>
             <div>
-                <Image src="/lgt-removebg-preview.png" alt="" className={'header-logo'}/>
+                <Image src="/lgt-removebg-preview.png" alt="" className={'header-logo'} onClick={()=>navigate('/')}/>
             </div>
             <div>
                 <ul>

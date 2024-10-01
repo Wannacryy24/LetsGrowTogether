@@ -12,7 +12,6 @@ export function makeServer() {
         { id: '4', name: 'React' },
       ];
 
-  
       let topics = {
         '1': [
           {

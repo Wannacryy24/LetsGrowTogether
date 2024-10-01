@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 .main-content{
-  display: flex;  
-  margin-top: 7vh;
+  display: flex;
 }
+
 .sidebar{
   width: 50vw;
   height: 100vh;  
@@ -16,8 +16,10 @@
   overflow: scroll;
   transition: transform 0.3s ease-in-out; 
   border-right: 1px solid #c8c8c8;
+  
 }
-::-webkit-scrollbar {
+
+.sidebar::-webkit-scrollbar {
   display: none;
 }
 .sidebar ul li{
