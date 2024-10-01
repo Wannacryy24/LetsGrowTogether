@@ -30,7 +30,9 @@
     font-size: 1rem;
     margin: 1rem 1rem;
     font-weight: bold;
+    
 }
+
 .selectCourse-container .left-div{   
     padding: 0rem 5rem;
     text-align: center;
@@ -52,8 +54,12 @@
     background-color: hsl(215.62deg 94.81% 54.71%);
     font-size: 1rem;
     margin: 1rem 1rem;
-    font-weight: bold;
+    font-weight: bold;   
 }
+.selectCourse-container .left-div button:hover{
+    background-color: hsl(216, 57%, 40%); 
+}
+
 
 @media screen and (max-width: 600px) {
     .selectCourse-container{
