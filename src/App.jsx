@@ -7,6 +7,7 @@ import { SectionProvider } from "./ContextProvider/SectionContext";
 import {Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import PageNotFound from "./Comonent/PageNotFound/PageNotFound";
 import Topics from "./Comonent/Topics/Topics";
+import Footer from "./Footer/Footer";
 
 makeServer();
 export default function App(){
@@ -22,8 +23,9 @@ export default function App(){
             <>
               <div className="container" style={{background: `url('/bg.webp')`}}>
                 <LandingPage/>
-              </div>
-              <SectionPage/>
+                </div>
+                <SectionPage/>
+                <Footer/>
             </>
           }
         />
