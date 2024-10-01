@@ -26,10 +26,12 @@ export default function Footer(){
       setFooterDimention(rect);
     }
 
-   window.addEventListener('mousemove',handleMouseMove); 
+   footerElement.addEventListener('mousemove',handleMouseMove); 
 
    return ()=> {
-    window.removeEventListener('mousemove',handleMouseMove); 
+    if (footerElement) {
+      footerElement.removeEventListener('mousemove', handleMouseMove);
+    }
    }
 
   },[]);
