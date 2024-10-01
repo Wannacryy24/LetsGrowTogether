@@ -58,7 +58,6 @@ const {sections, setSections ,selectedTopic, setSelectedTopic,selectedSection, s
               <h1>{item.name}</h1>
               {item.img && <img src={`/${item.img}`} alt="No Image"/>}
               <p>The language for building web pages</p>
-
               <Button onClick={() => handleLearnClick(item.id,item.name)}>Learn {item.name}</Button><br />
             {/* </div> */}
             {/* <div className="right-div">

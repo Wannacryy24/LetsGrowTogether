@@ -15,7 +15,7 @@ header{
   align-items: center;
   background-color: var(--primaryColor); 
   color: var(--white);
-  width: 100vw;
+  width: 100%;
   height: 10vh;
   top: 2vh;
   padding: 0rem 1rem;
@@ -81,6 +81,12 @@ header{
     border-radius: 5rem;
    background-color: hsl(0, 0%, 23%);
   } 
+
+  .nav-links-li:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    color: antiquewhite;
+  }
 
   @media screen and (max-width: 600px) {
     

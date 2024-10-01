@@ -67,7 +67,7 @@ export default function Footer(){
         <div className="footer-bottom">
           <p>&copy; 2024 LearnWithUs. All rights reserved.</p>
         </div>
-        <div 
+        {/* <div 
         className='cursor'
         style={{
           left: `${cursorPosition.x}px`,
@@ -79,7 +79,7 @@ export default function Footer(){
           pointerEvents:'none'
         }} 
         >
-        </div>
+        </div> */}
       </footer>
     )
 }

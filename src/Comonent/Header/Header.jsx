@@ -4,12 +4,42 @@ import Li from '../SharedComponent/Li';
 import './Header.css';
 import Button from '../SharedComponent/Button';
 import { SectionContext } from '../../ContextProvider/SectionContext';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
-const liData = ['HTML' , 'CSS' , 'JAVASCRIPT' , 'REACT' , 'MORE'];
+
+let liData = [
+    { id: '1', name: 'HTML' , img:'html.png'},
+    { id: '2', name: 'CSS' , img:'css.png'},
+    { id: '3', name: 'JavaScript' , img:'javascript.png'},
+    { id: '4', name: 'React' , img:'react.png'},
+  ];
 
 export function HeaderComponent() {
     const navigate = useNavigate();
+    const {sections, setSections ,selectedTopic, setSelectedTopic, setSelectedSection ,topics, setTopics} =  useContext(SectionContext);
+    
+    const handleClick = (sectionId) => {
+        fetch(`/api/sections/${sectionId}/topics`)
+          .then((response) => response.json())
+          .then((data) => {
+    
+            setTopics(data.topics);
+    
+            setSelectedSection(sectionId);
+    
+            // console.log(sectionName);
+            //HTML vo aayi hai sectionName jo Pass kiya hai 
+    
+            navigate(`/section/${sectionId}`);
+    
+    
+            setSelectedTopic(data.topics[0]); //isse Frist vala phle se select hokar dikhta hai 
+            //ye to useContext me hai to vha se mil jayega jab Topics component ko bulayenge
+    
+          })
+          .catch((error) => console.error('Error fetching topics:', error));
+      };
+
     const {selectedSection} = useContext(SectionContext);
     return (
         <header>
@@ -19,8 +49,9 @@ export function HeaderComponent() {
             <div>
                 <ul>
                     {liData.map(item => (
-                        <Li className={item} key={item} item={item}/>
+                        <Li key={item.id} item={item.name}  onClick={()=>handleClick(item.id)} className={'nav-links'}/>
                     ))}
+                    <Li item={'More'} className={'nav-links'}/>
                 </ul>
             </div>
             <div className="right-div">
