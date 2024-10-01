@@ -53,15 +53,19 @@ const {sections, setSections ,selectedTopic, setSelectedTopic,selectedSection, s
         
         sections.map((item) => (
           <div className="selectCourse-container" key={item.id}>
-            <div className="left-div">
+            {/* <div className="left-div"> */}
+
               <h1>{item.name}</h1>
+              {item.img && <img src={`/${item.img}`} alt="No Image"/>}
               <p>The language for building web pages</p>
+
               <Button onClick={() => handleLearnClick(item.id,item.name)}>Learn {item.name}</Button><br />
-            </div>
-            <div className="right-div">
-              <h1>{item.name}</h1>
-             
-            </div>
+            {/* </div> */}
+            {/* <div className="right-div">
+              <h1>{item.name} Example</h1>
+              <Image src={`/html-ss1.png`} alt="" /><br />
+              <Button>Try it yourself</Button>
+            </div> */}
           </div>
         ))
       }

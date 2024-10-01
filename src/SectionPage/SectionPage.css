@@ -1,77 +1,96 @@
-.selectCourse-container{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5rem;
-    padding: 5rem;
-    color: #e7e9eb;  
-   
-}
-.selectCourse-container .right-div{
-    padding: 1rem 10rem;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+  .page-container{
     display: flex;
-    flex-direction: column;
-    border-radius: 0rem 5rem;
-    border: 2px solid  #c8c8c8;
-    box-shadow: 10px 8px 0px rgb(191 219 254);
-}
-
-
-.selectCourse-container .right-div button{
-    padding: 1rem 2rem;
-    border-radius: 3rem;
-    border: none;
-    outline: none;
-    color: white;
-    background-color: hsl(215.62deg 94.81% 54.71%);
-    font-size: 1rem;
-    margin: 1rem 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    
-}
-
-.selectCourse-container .left-div{   
-    padding: 0rem 5rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 1rem;
+    overflow: hidden;
     justify-content: center;
-    align-items: center;
-    line-height: 10vh;
-    border-radius: 3rem;
-    border: 2px solid  #c8c8c8;
-    box-shadow: 10px 8px 0px rgb(191 219 254);
-}
-.selectCourse-container .left-div h1{
-    font-size: 3rem;
-}
-.selectCourse-container .left-div button{
-    padding: 1rem 2rem;
-    border-radius: 3rem;
-    border: none;
-    outline: none;
-    color: white;
-    background-color: hsl(215.62deg 94.81% 54.71%);
-    font-size: 1rem;
-    margin: 1rem 1rem;
-    font-weight: bold;   
-}
-.selectCourse-container .left-div button:hover{
-    background-color: hsl(216, 57%, 40%); 
-}
-
-
-@media screen and (max-width: 600px) {
-    .selectCourse-container{
-        flex-direction: column;
-        gap: 0rem;
-    }
-    .selectCourse-container .right-div{
-        padding: 0px;
-    }
-    .selectCourse-container .right-div button{
-        margin: 0rem;
-    }
-   
+    padding: 2rem;
+    width: 100%;
   }
 
+  .selectCourse-container {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    border: 1px solid white; 
+    border-radius: 8px; 
+    margin: 15px; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.2s; 
+    height: 60vh;
+    border: 3px solid #659AD2;
+    border-radius: 20px;
+    color: #659AD2;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .selectCourse-container h1{
+    font-size: 2rem;
+    color: #c8c8c8;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+  .selectCourse-container p{
+    font-size: 1.5rem;
+    color: #c8c8c8;
+    font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  }
+  .selectCourse-container img{
+    width: 20vh;
+    height: 20vh;
+  }
+  .selectCourse-container button{
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #c8c8c8;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    border: 3px solid #659AD2;
+    border-radius: 5em;
+    margin-top: 20px;
+    transition: 0.2s;
+  }
+
+  .selectCourse-container:hover button{
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #659AD2;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    border: 3px solid #659AD2;
+    border-radius: 5em;
+    margin-top: 20px;
+    transition: 0.2s;
+    width: 50%;
+  }
+
+  .selectCourse-container:hover{
+    width: 30vw;
+    transition: 1s;
+    margin: 15px; 
+    color: #659AD2;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+
+
+
+
+
+  }
+
+  .selectCourse-container:hover h1{
+    font-size: 2.5rem;
+  }

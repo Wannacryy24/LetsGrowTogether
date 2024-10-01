@@ -15,13 +15,13 @@ export default function App(){
   return (
     
     <Router>
+      <HeaderComponent/>
       <Routes>
         <Route 
           path='/'
           element={
             <>
-              <div className="container" style={{background: `url('/bg.webp')`}}>
-                <HeaderComponent/>
+              <div className="container" >
                 <LandingPage/>
                 </div>
                 <SectionPage/>
