@@ -47,5 +47,14 @@
     .landingPage-div{
       padding-top: 2vh;
     }
-    
+    .landingPage-div button{
+      padding: 1rem ;
+      margin: 2rem 0.5rem 0.5rem 0.5rem;
+    }
+    .landingPage-div h1{
+      font-size: 3.5rem;
+    }
+    .landingPage-div p{
+      line-height: 33px;
+    }
   } 
