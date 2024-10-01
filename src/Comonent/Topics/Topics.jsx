@@ -6,31 +6,40 @@ import { useState } from 'react';
 
 export default function Topics() {
   const{topics, setTopics, selectedTopic, setSelectedTopic , setSelectedSection} = useContext(SectionContext);
+
   const { sectionId , title} = useParams();
-    console.log(sectionId);
+
   const navigate = useNavigate();
 
-
   const [searchQuery, setSearchQuery] = useState(''); // State for search input
+  
   const [filteredTopics, setFilteredTopics] = useState([]);
+  
+  useEffect(()=>{
+    setFilteredTopics(topics);
+  },[]);
+ 
   useEffect(() => {
+    
+    console.log(filteredTopics);
+
     // agar topics empty hai like refresh karne par ,to  fetch karlo  topics based on sectionId
-    if (topics.length === 0) {
+    if (topics.length === 0 ) {
       fetch(`/api/sections/${sectionId}/topics`)
         .then((response) => response.json())
         .then((data) => {
           setTopics(data.topics);
-          console.log(data.topics[0]);
+          // console.log(data.topics[0]);
           setFilteredTopics(data.topics);
           if (data.topics.length > 0) {   
             if(title){
               const foundTopic = data.topics.find(topic=>topic.title===title);
               setSelectedTopic(foundTopic || data.Topics[0]);
-              console.log('done');
+              // console.log('done');
             }
             else{
               setSelectedTopic(data.topics[0]);
-              console.log('done');
+              // console.log('done');
             }
           }          
         })
@@ -38,7 +47,9 @@ export default function Topics() {
     }
   }, [sectionId, setTopics, setSelectedTopic, topics]);
 
-   //  search input changes ki handling
+
+
+  //  search input changes ki handling
    const handleSearchChange = (e) => {
     const query = e.target.value;
     setSearchQuery(query);
@@ -48,7 +59,7 @@ export default function Topics() {
       topic.title.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredTopics(filtered);
-    console.log(filteredTopics, 'filter')
+    console.log(filteredTopics, 'filter');
   };
   
   const handleTopicClick = (topic) => {
@@ -59,6 +70,7 @@ export default function Topics() {
   const handleTOHome = () => {
     navigate('/');
   }
+
   return (
      (
         <div className="main-content">

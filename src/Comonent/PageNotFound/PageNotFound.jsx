@@ -9,10 +9,6 @@ export default function PageNotFound() {
       <button className='go-home-btn' onClick={()=>navigate('/')}>Go Home</button>
       <img src='/404.png' alt="" />
       </div>
-      {/* <div>
-        <h1>Hello World</h1>
-        <div className='cursor'></div>
-      </div> */}
     </div>
   )
 }
