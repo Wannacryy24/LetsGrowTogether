@@ -5,7 +5,8 @@ import './Header.css';
 import Button from '../SharedComponent/Button';
 import { SectionContext } from '../../ContextProvider/SectionContext';
 import { Navigate, useNavigate } from 'react-router-dom';
-const liData = ['Job Seeker', 'Enterprise', 'Training', 'Pricing'];
+
+const liData = ['HTML' , 'CSS' , 'JAVASCRIPT' , 'REACT' , 'MORE'];
 
 export function HeaderComponent() {
     const navigate = useNavigate();

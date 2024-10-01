@@ -48,8 +48,7 @@ const {sections, setSections ,selectedTopic, setSelectedTopic,selectedSection, s
   return (
     <div className="page-container">
       {
-        // selectedSection ? 
-        
+        // selectedSection ?         
         // <Topics topics={topics} selectedTopic={selectedTopic}/> :
         
         sections.map((item) => (
