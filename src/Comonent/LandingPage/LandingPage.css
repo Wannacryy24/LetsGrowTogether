@@ -42,3 +42,10 @@
     background-color: var(--white);
     color: var(--primaryColor);
   } 
+
+  @media screen and (max-width: 600px) {
+    .landingPage-div{
+      padding-top: 2vh;
+    }
+    
+  } 
