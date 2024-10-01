@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     gap: 4rem;
-    background-color: #282a35;
+    /* background-color: #fefefe; */
     padding: 2rem;
     color: #e7e9eb;  
-    background: url('/bg.webp')  
+    /* background: url('/bg.webp')   */
    
 }
 .selectCourse-container .right-div{

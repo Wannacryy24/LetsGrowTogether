@@ -21,7 +21,7 @@ export default function App(){
           path='/'
           element={
             <>
-              <div className="container" style={{background: `url('/bg.webp')`}}>
+              <div className="container" >
                 <LandingPage/>
                 </div>
                 <SectionPage/>
