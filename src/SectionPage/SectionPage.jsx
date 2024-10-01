@@ -48,8 +48,7 @@ const {sections, setSections ,selectedTopic, setSelectedTopic,selectedSection, s
   return (
     <div className="page-container">
       {
-        // selectedSection ? 
-        
+        // selectedSection ?         
         // <Topics topics={topics} selectedTopic={selectedTopic}/> :
         
         sections.map((item) => (
@@ -60,9 +59,8 @@ const {sections, setSections ,selectedTopic, setSelectedTopic,selectedSection, s
               <Button onClick={() => handleLearnClick(item.id,item.name)}>Learn {item.name}</Button><br />
             </div>
             <div className="right-div">
-              <h1>{item.name} Example</h1>
-              <Image src={`/html-ss1.png`} alt="" /><br />
-              <Button>Try it yourself</Button>
+              <h1>{item.name}</h1>
+             
             </div>
           </div>
         ))
