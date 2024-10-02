@@ -7,7 +7,7 @@ import { useState } from 'react';
 export default function Topics() {
   const{topics, setTopics, selectedTopic, setSelectedTopic , setSelectedSection} = useContext(SectionContext);
 
-  const { sectionId , title} = useParams();
+  const { sectionId , title } = useParams();
 
   const navigate = useNavigate();
 
@@ -46,7 +46,6 @@ export default function Topics() {
         .catch((error) => console.error('Error fetching topics:', error));
     }
   }, [sectionId, setTopics, setSelectedTopic, topics]);
-
 
 
   //  search input changes ki handling
