@@ -21,6 +21,9 @@ export function HeaderComponent() {
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredTopics, setFilteredTopics] = useState([]);
 
+    useEffect(()=>{
+        
+    },[searchQuery])
     
     const handleSearchChange = (e)=>{
        const query = e.target.value;
