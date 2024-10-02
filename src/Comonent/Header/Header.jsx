@@ -1,4 +1,4 @@
-import React, { useContext , useState } from 'react';
+import React, { useContext , useEffect, useState } from 'react';
 import Image from '../SharedComponent/Image';
 import Li from '../SharedComponent/Li';
 import './Header.css';
