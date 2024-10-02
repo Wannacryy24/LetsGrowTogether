@@ -12,6 +12,7 @@ const navigate = useNavigate();
 const {sections, setSections ,selectedTopic, setSelectedTopic,selectedSection, setSelectedSection ,topics, setTopics} =  useContext(SectionContext);
 
   useEffect(() => {
+    
     fetch('/api/sections')
       .then((response) => response.json())
       .then((data) => {

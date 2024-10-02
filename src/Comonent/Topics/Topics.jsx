@@ -20,6 +20,7 @@ export default function Topics() {
   },[]);
  
   useEffect(() => {
+    
       fetch(`/api/sections/${sectionId}/topics`)
         .then((response) => response.json())
         .then((data) => {
@@ -36,10 +37,11 @@ export default function Topics() {
           //     setSelectedTopic(data.topics[0]);
           //     // fetchTopicContent(); //initial first topic ke content ko fetch karega
           // //   }
-          }          
-        })
+          } 
+                 
+    })
         .catch((error) => console.error('Error fetching topics:', error));
-    
+  
   }, [sectionId, setTopics, setSelectedTopic]);
 
 //id se topic ka content fetch
