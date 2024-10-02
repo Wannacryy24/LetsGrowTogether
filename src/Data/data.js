@@ -76,7 +76,7 @@ export function makeServer() {
           },
           {
             id: '2-3',
-            title: 'What is the Box Model?',
+            title: 'What is the Box Model',
             content: 'The CSS box model is a fundamental concept that describes how elements are structured in terms of box dimensions. Each box consists of margins, borders, padding, and the actual content area. The content area holds the text and images, while padding is the space between the content and the border, which encases it. Margins create space between the borders of adjacent elements. Understanding the box model is crucial for effective layout design, as it affects the overall spacing and dimensions of elements. By manipulating the properties of the box model, developers can create visually appealing and well-structured web pages.'
           },
           {
@@ -205,7 +205,7 @@ export function makeServer() {
           },
           {
             id: '4-8',
-            title: 'What is Context API in React?',
+            title: 'What is Context API in React',
             content: 'The Context API is a powerful feature in React that allows for global state management and enables the sharing of data across the component tree without passing props down manually at every level. By creating a Context object, developers can provide a value that can be accessed by any component within the tree. This is particularly useful for managing themes, authentication, or user settings, reducing prop drilling and improving code organization. The Context API works well with hooks, allowing functional components to consume context easily with the useContext hook. Understanding the Context API is crucial for building scalable applications with complex data requirements in React.'
           },
           {
@@ -225,7 +225,6 @@ export function makeServer() {
       this.get('/sections', () => {
         return { sections };
       });
-
       
       this.get('/sections/:id/topics', (schema, request) => {
         let sectionId = request.params.id;

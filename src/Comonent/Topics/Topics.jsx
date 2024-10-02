@@ -8,7 +8,7 @@ export default function Topics() {
   const{topics, setTopics, selectedTopic, setSelectedTopic , setSelectedSection} = useContext(SectionContext);
 
   const { sectionId , title } = useParams();
-
+  
   const navigate = useNavigate();
 
   const [searchQuery, setSearchQuery] = useState(''); // State for search input
@@ -20,38 +20,77 @@ export default function Topics() {
   },[]);
  
   useEffect(() => {
-      fetch(`/api/sections/${sectionId}/topics`)
+      title ? 
+      (
+        fetch(`/api/sections/${sectionId}/topics`)
         .then((response) => response.json())
         .then((data) => {
+          setTopics(data.topics);
+          setFilteredTopics(data.topics);
+          console.log('title vale me ')
+          if (data.topics.length > 0) {   
+    
+          
+          // const firstTopic = data.topics[0]
+          
+          // setSelectedTopic(firstTopic)
+
+          // fetchTopicContent(firstTopic.id)
+          console.log('title:' , title);
+          
+          console.log(data);
+
+          const foundTopic = data.topics.find(topic => topic.title.replace(/\?/g,'').toLowerCase() === title.replace(/\?/g,'').toLowerCase());
+
+          console.log(foundTopic);
+          
+          setSelectedTopic(foundTopic);
+          
+          //     setSelectedTopic(data.topics[0]);
+          //     // fetchTopicContent(); //initial first topic ke content ko fetch karega
+          // //   }
+          }          
+        })
+      )
+      :
+      (fetch(`/api/sections/${sectionId}/topics`)
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log(data);
           setTopics(data.topics);
           // console.log(data.topics[0]);
           setFilteredTopics(data.topics);
           
           if (data.topics.length > 0) {   
           // //   if(title){
+          
           const firstTopic = data.topics[0]
+          
           setSelectedTopic(firstTopic)
+
           fetchTopicContent(firstTopic.id)
+          
           // //     const foundTopic = data.topics.find(topic=>topic.title===title);
           //     setSelectedTopic(data.topics[0]);
           //     // fetchTopicContent(); //initial first topic ke content ko fetch karega
           // //   }
+
           }          
-        })
+        }))
         .catch((error) => console.error('Error fetching topics:', error));
     
   }, [sectionId, setTopics, setSelectedTopic]);
 
-//id se topic ka content fetch
-const fetchTopicContent = (topicId)=>{
+  //id se topic ka content fetch
+  const fetchTopicContent = (topicId)=>{
     fetch(`/api/topics/${topicId}`)
       .then((response)=> response.json())
       .then((data)=>{
         setSelectedTopic(data.topic);
-        console.log("content ki request")
-      })
-      .catch((error)=> console.error('error in fetching content:' , error))
-}
+        console.log("content ki request");
+    })
+    .catch((error)=> console.error('error in fetching content:' , error))
+  }
 
   //  search input changes ki handling
    const handleSearchChange = (e) => {
