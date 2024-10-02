@@ -231,6 +231,20 @@ export function makeServer() {
         let sectionId = request.params.id;
         return { topics: topics[sectionId] || [] };
       });
+
+      this.get('/topics/:id', (schema, request) => {
+        let topic = null;
+       // topics object par loop chalega to access each section topics
+        for (let sectionId in topics) {
+          //topics[sectionId] us section ke array of topics dega
+          let found = topics[sectionId].find(t => t.id === request.params.id); // id ko request url ki id se match karega
+          if (found) {
+            topic = found;
+            break;
+          }
+        }
+     return { topic};
+      });
     },
   });
 }

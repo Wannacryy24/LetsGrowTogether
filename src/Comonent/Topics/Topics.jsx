@@ -20,33 +20,38 @@ export default function Topics() {
   },[]);
  
   useEffect(() => {
-    
-    console.log(filteredTopics);
-
-    // agar topics empty hai like refresh karne par ,to  fetch karlo  topics based on sectionId
-    if (topics.length === 0 ) {
       fetch(`/api/sections/${sectionId}/topics`)
         .then((response) => response.json())
         .then((data) => {
           setTopics(data.topics);
           // console.log(data.topics[0]);
           setFilteredTopics(data.topics);
+          
           if (data.topics.length > 0) {   
-            if(title){
-              const foundTopic = data.topics.find(topic=>topic.title===title);
-              setSelectedTopic(foundTopic || data.Topics[0]);
-              // console.log('done');
-            }
-            else{
-              setSelectedTopic(data.topics[0]);
-              // console.log('done');
-            }
+          // //   if(title){
+          const firstTopic = data.topics[0]
+          setSelectedTopic(firstTopic)
+          fetchTopicContent(firstTopic.id)
+          // //     const foundTopic = data.topics.find(topic=>topic.title===title);
+          //     setSelectedTopic(data.topics[0]);
+          //     // fetchTopicContent(); //initial first topic ke content ko fetch karega
+          // //   }
           }          
         })
         .catch((error) => console.error('Error fetching topics:', error));
-    }
-  }, [sectionId, setTopics, setSelectedTopic, topics]);
+    
+  }, [sectionId, setTopics, setSelectedTopic]);
 
+//id se topic ka content fetch
+const fetchTopicContent = (topicId)=>{
+    fetch(`/api/topics/${topicId}`)
+      .then((response)=> response.json())
+      .then((data)=>{
+        setSelectedTopic(data.topic);
+        console.log("content ki request")
+      })
+      .catch((error)=> console.error('error in fetching content:' , error))
+}
 
   //  search input changes ki handling
    const handleSearchChange = (e) => {
@@ -58,12 +63,12 @@ export default function Topics() {
       topic.title.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredTopics(filtered);
-    console.log(filteredTopics, 'filter');
+    // console.log(filteredTopics, 'filter');
   };
   
   const handleTopicClick = (topic) => {
     navigate(`/section/${sectionId}/Topics/${topic.title}`);
-    setSelectedTopic(topic);
+    fetchTopicContent(topic.id); // slected topic ke content ko fetch karega
   };
 
   const handleTOHome = () => {
