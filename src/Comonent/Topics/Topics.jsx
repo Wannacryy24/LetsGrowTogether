@@ -78,7 +78,7 @@ export default function Topics() {
           }          
         }))
         .catch((error) => console.error('Error fetching topics:', error));
-    
+  
   }, [sectionId, setTopics, setSelectedTopic]);
 
   //id se topic ka content fetch
