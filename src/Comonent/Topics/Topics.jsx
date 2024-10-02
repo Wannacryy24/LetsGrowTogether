@@ -7,7 +7,7 @@ import { useState } from 'react';
 export default function Topics() {
   const{topics, setTopics, selectedTopic, setSelectedTopic , setSelectedSection} = useContext(SectionContext);
 
-  const { sectionId , title} = useParams();
+  const { sectionId , title } = useParams();
 
   const navigate = useNavigate();
 

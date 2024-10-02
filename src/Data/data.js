@@ -4,7 +4,6 @@ export function makeServer() {
  return createServer({
     routes() {
       this.namespace = 'api';
-
       let sections = [
         { id: '1', name: 'HTML' , img:'html.png'},
         { id: '2', name: 'CSS' , img:'css.png'},
