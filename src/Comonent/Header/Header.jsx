@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext , useEffect, useState } from 'react';
 import Image from '../SharedComponent/Image';
 import Li from '../SharedComponent/Li';
 import './Header.css';
@@ -20,6 +20,29 @@ export function HeaderComponent() {
     const navigate = useNavigate();
     const {sections, setSections ,selectedTopic, setSelectedTopic, setSelectedSection ,topics, setTopics} =  useContext(SectionContext);
     
+    const [searchQuery, setSearchQuery] = useState('');
+    const [filteredTopics, setFilteredTopics] = useState([]);
+
+    useEffect(()=>{
+        
+    },[searchQuery])
+    
+    const handleSearchChange = (e)=>{
+       const query = e.target.value;
+       setSearchQuery(query);
+       const filtered = topics.filter(topic =>
+            topic.title.toLowerCase().includes(query.toLowerCase())
+            );
+            setFilteredTopics(filtered);
+        };
+
+        const handleTopicClick = (topic) => {
+            navigate(`/section/${topic.sectionId}/Topics/${topic.title}`);
+            setSelectedSection(topic.sectionId);
+            setSelectedTopic(topic); 
+            setSearchQuery('');
+        };
+
     const handleClick = (sectionId) => {
         fetch(`/api/sections/${sectionId}/topics`)
           .then((response) => response.json())
@@ -58,11 +81,27 @@ export function HeaderComponent() {
             </div>
             <div className="right-div">
                 <div className="search-container">
-                    <input type="search" placeholder='Search' />
+                    <input type="search" placeholder='Search' value={searchQuery} onChange={handleSearchChange}/>
                     <i className="fa-solid fa-magnifying-glass search-icon"></i>
+                    {searchQuery && (
+                        <div className="search-results">
+                            <ul>
+                                {filteredTopics.length > 0 ? (
+                                    filteredTopics.map(topic => (
+                                        <li key={topic.id} onClick={() => handleTopicClick(topic)}>
+                                            {topic.title}
+                                        </li>
+                                    ))
+                                ) : (
+                                    <li>No topics found</li>
+                                )}
+                            </ul>
+                        </div>
+                    )}
                 </div>
                 <Button>Log in</Button>                
             </div>
         </header>
     )
 }
+

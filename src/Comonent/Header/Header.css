@@ -90,6 +90,18 @@ header{
     transform: scale(1.1);
     color: antiquewhite;
   }
+ .search-results ul{
+    display: flex;
+    position: absolute;
+    top: 10vh;
+    right: 20vw;
+    width: 40vw;
+    background-color: white;
+    color: black;
+    flex-direction: column;
+    height: 70vh;
+  } 
+  
 
   @media screen and (max-width: 600px) {
     
