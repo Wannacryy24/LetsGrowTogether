@@ -14,7 +14,7 @@ export default function Topics() {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState(''); // State for search input  
   const [filteredTopics, setFilteredTopics] = useState([]);
-  const[isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const[isSidebarOpen, setIsSidebarOpen] = useState(false);
   
   useEffect(()=>{
     setFilteredTopics(topics);
@@ -106,6 +106,7 @@ export default function Topics() {
   const handleTopicClick = (topic) => {
     navigate(`/section/${sectionId}/Topics/${topic.title}`);
     fetchTopicContent(topic.id); // slected topic ke content ko fetch karega
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   const handleTOHome = () => {
@@ -119,19 +120,12 @@ export default function Topics() {
   return (
      (
         <div className="main-content">
-          <button className="hamburger-icon" onClick={toggleSidebar}><i class="fa-solid fa-bars"></i></button>
           
-          <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
+          <button className="hamburger-icon" onClick={toggleSidebar}><i className="fa-solid fa-bars"></i></button>
+          {
+            sidebar && (
+              <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
            <div className='side-head'> <h2>Topics</h2><span><button onClick={handleTOHome}>&larr;</button></span></div>
-           
-           <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search topics..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-          />
-        </div>
             <ul>
               {filteredTopics.length > 0 ? (
                 filteredTopics.map((topic) => (
@@ -144,6 +138,8 @@ export default function Topics() {
               )}
             </ul>
           </div>
+            )
+          }
           <div className="topic-detail">
             {selectedTopic ? (
               <div>

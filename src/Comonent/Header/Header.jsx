@@ -9,7 +9,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 export function HeaderComponent() {
     
     const navigate = useNavigate();
-    const {topics,setTopics,setSelectedSection,setSelectedTopic,sidebar , setSideBar} =  useContext(SectionContext);
+    const {topics,setTopics,setSelectedSection,setSelectedTopic, setSideBar} =  useContext(SectionContext);
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredTopics, setFilteredTopics] = useState([]);
     const [liData , setLiData] = useState([]);
