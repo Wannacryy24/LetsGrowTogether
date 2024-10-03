@@ -6,45 +6,50 @@ import Button from '../SharedComponent/Button';
 import { SectionContext } from '../../ContextProvider/SectionContext';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 
-
-let liData = [
-    { id: '1', name: 'HTML' , img:'html.png'},
-    { id: '2', name: 'CSS' , img:'css.png'},
-    { id: '3', name: 'JavaScript' , img:'javascript.png'},
-    { id: '4', name: 'React' , img:'react.png'},
-  ];
-
 export function HeaderComponent() {
     const navigate = useNavigate();
-    const {sections, setSections ,selectedTopic, setSelectedTopic, setSelectedSection ,topics, setTopics} =  useContext(SectionContext);
-    
+    const {topics,setTopics,setSelectedSection,setSelectedTopic,sidebar , setSideBar} =  useContext(SectionContext);
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredTopics, setFilteredTopics] = useState([]);
+    const [liData , setLiData] = useState([]);
+    const [searchedTopic , setSearchedTopics] =  useState({})
 
     useEffect(()=>{
-        
+        fetch('/api/sections')
+        .then(res => res.json())
+        .then(data=>setLiData(data.sections))
+    },[])
+
+    useEffect(()=>{
+        fetch(`/api/topics?q=${searchQuery}`)
+        .then((response) => response.json())
+        .then((data) => {
+                setSearchedTopics(data.topics || []) 
+                // console.log(data);
+                // console.log('searchedTopic' , searchedTopic);
+        })
     },[searchQuery])
     
     const handleSearchChange = (e)=>{
-       const query = e.target.value;
-       setSearchQuery(query);
-       const filtered = topics.filter(topic =>
-            topic.title.toLowerCase().includes(query.toLowerCase())
-            );
-            setFilteredTopics(filtered);
-        };
+        const query = e.target.value;
+        setSearchQuery(query);
+        // const filtered = searchedTopic.filter(topic =>
+        //      topic.title.toLowerCase().includes(query.toLowerCase())
+        //      );
+        //      setFilteredTopics(filtered);
+         };  
+    const handleTopicClick = (topic) => {
+        // console.log(topic.id,'id');
+        navigate(`${topic.id}`);
+        setSearchQuery('');
+        setSideBar(null);
+    };
 
-        const handleTopicClick = (topic) => {
-            navigate(`/section/${topic.sectionId}/Topics/${topic.title}`);
-            setSelectedSection(topic.sectionId);
-            setSelectedTopic(topic); 
-            setSearchQuery('');
-        };
 
     const handleClick = (sectionId) => {
         fetch(`/api/sections/${sectionId}/topics`)
-          .then((response) => response.json())
-          .then((data) => {
+            .then((response) => response.json())
+            .then((data) => {
     
             setTopics(data.topics);
     
@@ -58,12 +63,11 @@ export function HeaderComponent() {
     
             setSelectedTopic(data.topics[0]); //isse Frist vala phle se select hokar dikhta hai 
             //ye to useContext me hai to vha se mil jayega jab Topics component ko bulayenge
-    
-          })
-          .catch((error) => console.error('Error fetching topics:', error));
-      };
+            setSideBar(true);
+            })
+        .catch((error) => console.error('Error fetching topics:', error));
+    };
 
-    const {selectedSection} = useContext(SectionContext);
     return (
         <header>
             <div>
@@ -84,8 +88,8 @@ export function HeaderComponent() {
                     {searchQuery && (
                         <div className="search-results">
                             <ul>
-                                {filteredTopics.length > 0 ? (
-                                    filteredTopics.map(topic => (
+                                {searchedTopic.length > 0 ? (
+                                    searchedTopic.map(topic => (
                                         <li key={topic.id} onClick={() => handleTopicClick(topic)}>
                                             {topic.title}
                                         </li>
@@ -102,4 +106,3 @@ export function HeaderComponent() {
         </header>
     )
 }
-

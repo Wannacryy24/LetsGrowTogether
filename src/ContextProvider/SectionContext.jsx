@@ -7,11 +7,10 @@ export const SectionProvider = ({ children }) => {
   const [selectedSection, setSelectedSection] = useState(null); 
   const [topics, setTopics] = useState([]);  
   const [selectedTopic, setSelectedTopic] = useState(null);  
-
-
+  const [ sidebar , setSideBar ] = useState(true);
 
   return (
-    <SectionContext.Provider value={{ sections, setSections ,selectedTopic, setSelectedTopic,selectedSection, setSelectedSection ,topics, setTopics, ref,}}>
+    <SectionContext.Provider value={{ sections, setSections ,selectedTopic, setSelectedTopic,selectedSection, setSelectedSection ,topics, setTopics, ref,sidebar , setSideBar}}>
       {children}
     </SectionContext.Provider>
   );

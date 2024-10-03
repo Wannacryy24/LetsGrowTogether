@@ -10,6 +10,7 @@ export function makeServer() {
         { id: '3', name: 'JavaScript' , img:'javascript.png'},
         { id: '4', name: 'React' , img:'react.png'},
       ];
+
       let topics = {
         '1': [
           {
@@ -205,7 +206,7 @@ export function makeServer() {
           },
           {
             id: '4-8',
-            title: 'What is Context API in React',
+            title: 'What is Context API in React?',
             content: 'The Context API is a powerful feature in React that allows for global state management and enables the sharing of data across the component tree without passing props down manually at every level. By creating a Context object, developers can provide a value that can be accessed by any component within the tree. This is particularly useful for managing themes, authentication, or user settings, reducing prop drilling and improving code organization. The Context API works well with hooks, allowing functional components to consume context easily with the useContext hook. Understanding the Context API is crucial for building scalable applications with complex data requirements in React.'
           },
           {
@@ -230,6 +231,30 @@ export function makeServer() {
         let sectionId = request.params.id;
         return { topics: topics[sectionId] || [] };
       });
+
+      this.get('/:id',(schema , request)=>{
+        let id = request.params.id;
+        const allTopics = Object.values(topics).flat();
+        var newData  = allTopics.filter(item=>item.id===id);
+        console.log(newData);
+          return {newData}
+      })
+
+      this.get('/topics', (schema, request) => {
+        const searchQuery = request.queryParams.q || '';
+        const allTopics = Object.values(topics).flat();
+        if (searchQuery) {
+          const filteredTopics = allTopics.filter(topic =>
+            topic.title.toLowerCase().includes(searchQuery.toLowerCase())
+          );
+          return { topics: filteredTopics };
+        } else {
+          // agar search query nahi hai to all topics dedo
+          return { allTopics };
+        }
+      });
+
+
 
       this.get('/topics/:id', (schema, request) => {
         let topic = null;

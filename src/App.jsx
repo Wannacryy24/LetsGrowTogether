@@ -8,12 +8,12 @@ import {Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import PageNotFound from "./Comonent/PageNotFound/PageNotFound";
 import Topics from "./Comonent/Topics/Topics";
 import Footer from "./Footer/Footer";
+import Testing from "./Testing";
 
 makeServer();
 export default function App(){
   
   return (
-    
     <Router>
       <HeaderComponent/>
       <Routes>
@@ -33,6 +33,7 @@ export default function App(){
         {/* <Route path='/sections' element={<Topics></Topics>}/> */}
         <Route path="/section/:sectionId" element={<Topics />} />
         <Route path="/section/:sectionId/Topics/:title" element={<Topics/>}/>
+        <Route path=":id" element={<Topics/>}/>
       </Routes>
     </Router>
   );

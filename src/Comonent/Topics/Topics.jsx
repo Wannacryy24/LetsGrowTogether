@@ -5,9 +5,11 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function Topics() {
-  const{topics, setTopics, selectedTopic, setSelectedTopic , setSelectedSection} = useContext(SectionContext);
 
-  const { sectionId , title } = useParams();
+  
+  const{topics, setTopics, selectedTopic, setSelectedTopic , setSelectedSection , sidebar , setSideBar} = useContext(SectionContext);
+
+  const { sectionId , title ,id} = useParams();
   
   const navigate = useNavigate();
 
@@ -15,11 +17,22 @@ export default function Topics() {
   
   const [filteredTopics, setFilteredTopics] = useState([]);
   
+  
   useEffect(()=>{
     setFilteredTopics(topics);
   },[]);
  
   useEffect(() => {
+      id ? (
+          fetch(`/api/${id}`)
+          .then(res=>res.json())
+          .then(data=>{
+            // console.log(data.newData);
+            setSelectedTopic(data.newData[0])
+            console.log(selectedTopic,'selectedTopic');
+          })
+      )
+      :
       title ? 
       (
         fetch(`/api/sections/${sectionId}/topics`)
@@ -30,7 +43,6 @@ export default function Topics() {
           console.log('title vale me ')
           if (data.topics.length > 0) {   
     
-          
           // const firstTopic = data.topics[0]
           
           // setSelectedTopic(firstTopic)
@@ -79,7 +91,7 @@ export default function Topics() {
         }))
         .catch((error) => console.error('Error fetching topics:', error));
   
-  }, [sectionId, setTopics, setSelectedTopic]);
+  }, [sectionId, setTopics, setSelectedTopic,id]);
 
   //id se topic ka content fetch
   const fetchTopicContent = (topicId)=>{
@@ -92,18 +104,6 @@ export default function Topics() {
     .catch((error)=> console.error('error in fetching content:' , error))
   }
 
-  //  search input changes ki handling
-   const handleSearchChange = (e) => {
-    const query = e.target.value;
-    setSearchQuery(query);
-
-    // search query ke base par filter
-    const filtered = topics.filter((topic) =>
-      topic.title.toLowerCase().includes(query.toLowerCase())
-    );
-    setFilteredTopics(filtered);
-    // console.log(filteredTopics, 'filter');
-  };
   
   const handleTopicClick = (topic) => {
     navigate(`/section/${sectionId}/Topics/${topic.title}`);
@@ -117,30 +117,21 @@ export default function Topics() {
   return (
      (
         <div className="main-content">
-          <div className="sidebar">
-           <div className='side-head'> <h2>Topics</h2><span><button onClick={handleTOHome}>&larr;</button></span></div>
-           
-           <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search topics..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-          />
-        </div>
-            <ul>
-          {filteredTopics.length > 0 ? (
-            filteredTopics.map((topic) => (
-              <li key={topic.id} onClick={() => handleTopicClick(topic)}>
-                {topic.title}
-              </li>
-            ))
-          ) : (
-            <li>No topics found</li>
-          )}
-        </ul>
+          <div className={ sidebar ? 'sidebar' : 'sidebar-hidden' }>
+           <div className='side-head'> <h2>Topics</h2><span><button onClick={handleTOHome}>&larr;</button></span>
           </div>
-
+            <ul>
+              {filteredTopics.length > 0 ? (
+                filteredTopics.map((topic) => (
+                  <li key={topic.id} onClick={() => handleTopicClick(topic)}>
+                    {topic.title}
+                  </li>
+                ))
+              ) : (
+                <li>No topics found</li>
+              )}
+            </ul>
+          </div>
           <div className="topic-detail">
             {selectedTopic ? (
               <div>
