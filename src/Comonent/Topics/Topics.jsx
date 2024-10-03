@@ -6,14 +6,11 @@ import { useState } from 'react';
 
 export default function Topics() {
   const{topics, setTopics, selectedTopic, setSelectedTopic , setSelectedSection} = useContext(SectionContext);
-
   const { sectionId , title} = useParams();
-
   const navigate = useNavigate();
-
-  const [searchQuery, setSearchQuery] = useState(''); // State for search input
-  
+  const [searchQuery, setSearchQuery] = useState(''); // State for search input  
   const [filteredTopics, setFilteredTopics] = useState([]);
+  const[isSidebarOpen, setIsSidebarOpen] = useState(false)
   
   useEffect(()=>{
     setFilteredTopics(topics);
@@ -35,11 +32,13 @@ export default function Topics() {
             if(title){
               const foundTopic = data.topics.find(topic=>topic.title===title);
               setSelectedTopic(foundTopic || data.Topics[0]);
+              
               // console.log('done');
             }
             else{
               setSelectedTopic(data.topics[0]);
               // console.log('done');
+              
             }
           }          
         })
@@ -65,16 +64,24 @@ export default function Topics() {
   const handleTopicClick = (topic) => {
     navigate(`/section/${sectionId}/Topics/${topic.title}`);
     setSelectedTopic(topic);
+    setIsSidebarOpen(false)
+    
   };
 
   const handleTOHome = () => {
     navigate('/');
   }
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen)
+  }
+
   return (
      (
         <div className="main-content">
-          <div className="sidebar">
+          <button className="hamburger-icon" onClick={toggleSidebar}><i class="fa-solid fa-bars"></i></button>
+          
+          <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
            <div className='side-head'> <h2>Topics</h2><span><button onClick={handleTOHome}>&larr;</button></span></div>
            
            <div className="search-container">
@@ -89,8 +96,9 @@ export default function Topics() {
           {filteredTopics.length > 0 ? (
             filteredTopics.map((topic) => (
               <li key={topic.id} onClick={() => handleTopicClick(topic)}>
-                {topic.title}
+                {topic.title}                
               </li>
+              
             ))
           ) : (
             <li>No topics found</li>
