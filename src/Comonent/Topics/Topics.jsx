@@ -12,11 +12,9 @@ export default function Topics() {
   const { sectionId , title ,id} = useParams();
   
   const navigate = useNavigate();
-
-  const [searchQuery, setSearchQuery] = useState(''); // State for search input
-  
+  const [searchQuery, setSearchQuery] = useState(''); // State for search input  
   const [filteredTopics, setFilteredTopics] = useState([]);
-  
+  const[isSidebarOpen, setIsSidebarOpen] = useState(false)
   
   useEffect(()=>{
     setFilteredTopics(topics);
@@ -114,12 +112,26 @@ export default function Topics() {
     navigate('/');
   }
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen)
+  }
+
   return (
      (
         <div className="main-content">
-          <div className={ sidebar ? 'sidebar' : 'sidebar-hidden' }>
-           <div className='side-head'> <h2>Topics</h2><span><button onClick={handleTOHome}>&larr;</button></span>
-          </div>
+          <button className="hamburger-icon" onClick={toggleSidebar}><i class="fa-solid fa-bars"></i></button>
+          
+          <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
+           <div className='side-head'> <h2>Topics</h2><span><button onClick={handleTOHome}>&larr;</button></span></div>
+           
+           <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search topics..."
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+        </div>
             <ul>
               {filteredTopics.length > 0 ? (
                 filteredTopics.map((topic) => (

@@ -7,6 +7,7 @@ import { SectionContext } from '../../ContextProvider/SectionContext';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 export function HeaderComponent() {
+    
     const navigate = useNavigate();
     const {topics,setTopics,setSelectedSection,setSelectedTopic,sidebar , setSideBar} =  useContext(SectionContext);
     const [searchQuery, setSearchQuery] = useState('');
@@ -73,7 +74,7 @@ export function HeaderComponent() {
             <div>
                 <Image src="/lgt-removebg-preview.png" alt="" className={'header-logo'} onClick={()=>navigate('/')}/>
             </div>
-            <div>
+            <div className='center-div'>
                 <ul>
                     {liData.map(item => (
                         <Li key={item.id} item={item.name}  onClick={()=>handleClick(item.id)} className={'nav-links'}/>

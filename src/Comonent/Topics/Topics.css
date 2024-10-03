@@ -37,17 +37,20 @@
   justify-content: space-between;
   margin-bottom: 3vh;
   border-bottom: 1px solid #c8c8c8;
-  padding: 3px 0px 8px 0px;
+  padding: 3px 0px 5px 0px;
+ 
 }
 .side-head h2{
   color:  #22B0DD;
 }
 .side-head button{
   padding: 0rem 0.2rem;
-  font-size: large;
+  font-size: 30px;
   font-weight: bold;
+  border: none;
+  outline: none;
   background-color: #1b1b1b;
-  color: #c8c8c8;
+  color: #22B0DD;
   
 }
 .topic-detail {
@@ -68,7 +71,46 @@
     width: 100%;
     margin-top: 5px;
     margin-bottom: 10px;
+    outline: none;
+    background-color: #1b1b1b;
+    border: 1px solid #c8c8c8;  
+    color: #c8c8c8; 
 }
+.hamburger-icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .hamburger-icon {
+    display: block;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 0rem 0.3rem;
+    color: #22B0DD;
+    background-color: var(--primaryColor);
+    position: absolute;
+    border: none;
+    outline: none;
+    top: 28px;
+    left: 5px;
+    
+  }
+  
+  .sidebar {
+    position: absolute;
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.closed {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+ 
+} 
+
 
 .sidebar-hidden{
   display: none;
