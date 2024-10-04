@@ -10,6 +10,7 @@
   }
 
   .selectCourse-container {
+    rotate: 5deg;
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;
@@ -75,8 +76,10 @@
   }
 
   .selectCourse-container:hover{
-    width: 30vw;
+    
+    transform: scale(1.1);
     transition: 1s;
+    rotate: 0deg;
     margin: 15px; 
     color: #659AD2;
     justify-content: space-between;
