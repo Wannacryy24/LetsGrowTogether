@@ -4,8 +4,6 @@ export function LandingPage(){
         <div className="landingPage-div">
             <h1>Learn and Get <span> hired faster </span> with our interview prepration tool</h1>
             <p>Practice for any job position to boost your confidence and skills with unlimited, on-demand interview simulations.</p>
-            <button>Start Practicing for free</button>
-            <button>Learn More</button>
         </div>
     )
 } 

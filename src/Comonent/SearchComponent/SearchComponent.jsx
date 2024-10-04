@@ -4,7 +4,7 @@ import { SectionContext } from '../../ContextProvider/SectionContext';
 import { useNavigate } from 'react-router-dom';
 
 export default function SearchComponent() {
-    const { setSideBar , searchClicked , setSearchClicked} =  useContext(SectionContext);
+    const { setSideBar , searchClicked , setSearchClicked, refInput} =  useContext(SectionContext);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchedTopic , setSearchedTopics] =  useState({});
     useEffect(()=>{
@@ -14,6 +14,12 @@ export default function SearchComponent() {
                 setSearchedTopics(data.topics || [])
         })
     },[searchQuery])
+
+    useEffect(()=>{
+        var input = refInput.current;
+        input.focus();
+    },[])
+
     const navigate = useNavigate();
 
     const handleSearchChange = (e)=>{
@@ -35,7 +41,7 @@ export default function SearchComponent() {
   return (
     <div className='Search-main-Div' onClick={hideSearchBar}>
         <div className='search-inner-div' onClick={preventHide}>
-            <input type="search" name="" id="" className='modal-input-field' placeholder='Search Docs' onChange={handleSearchChange}/>
+            <input type="search" name="" id="" className='modal-input-field' placeholder='Search Docs' onChange={handleSearchChange} ref={refInput}/>
             {searchQuery && 
                         <div className='search-result-div'>
                             {searchedTopic.length > 0 ? 
