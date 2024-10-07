@@ -113,6 +113,9 @@ export default function Topics() {
     navigate('/');
   }
 
+
+
+  
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen)
   }
