@@ -6,9 +6,9 @@ export function makeServer() {
       this.namespace = 'api';      
       let sections = [
         { id: '1', name: 'HTML' , img:'html.png', details:'HTML is the standard markup language for Web pages.'},
-        { id: '2', name: 'CSS' , img:'css.png', details:''},
-        { id: '3', name: 'JavaScript' , img:'javascript.png', details:''},
-        { id: '4', name: 'React' , img:'react.png', details:''},
+        { id: '2', name: 'CSS' , img:'css.png', details:'CSS is the language we use to style an HTML document.'},
+        { id: '3', name: 'JavaScript' , img:'javascript.png', details:'JavaScript is the programming language of the Web.'},
+        { id: '4', name: 'React' , img:'react.png', details:'React is a JavaScript library for building user interfaces.'},
       ];
 
       let topics = {
