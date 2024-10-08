@@ -4,7 +4,8 @@ import { SectionContext } from '../../ContextProvider/SectionContext';
 import { useNavigate } from 'react-router-dom';
 
 export default function SearchComponent() {
-    const { setSideBar , searchClicked , setSearchClicked, refInput , setTopics, setSelectedTopic} =  useContext(SectionContext);
+    const { setSideBar , searchClicked , setSearchClicked, refInput , setTopics, setSelectedTopic, showSideBar,
+        setShowSidebar,} =  useContext(SectionContext);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchedTopic , setSearchedTopics] =  useState([]);
     useEffect(()=>{
@@ -34,10 +35,10 @@ export default function SearchComponent() {
         .then((data) => {
           setTopics(data.topics);  // us section ke saare topics set karega
           setSelectedTopic(topic); // clicked topic selected set
-  
           navigate(`/section/${topic.sectionId}/Topics/${topic.title}`);  // clicked topic par navigate karega
           setSideBar(true);  
           setSearchClicked(false);  
+          setShowSidebar(false);
         })
         .catch(error => console.error('topics not found:', error));
             // navigate(`${topic.id}`);

@@ -10,6 +10,7 @@ export const SectionProvider = ({ children }) => {
   const [selectedTopic, setSelectedTopic] = useState(null);  
   const [ sidebar , setSideBar ] = useState(true);
   const [searchClicked , setSearchClicked] = useState(false);
+  const [showSideBar  , setShowSidebar] = useState(true);
   return (
     <SectionContext.Provider value={
         { sections, setSections ,
@@ -18,7 +19,8 @@ export const SectionProvider = ({ children }) => {
           topics, setTopics,
           ref,refInput,
           sidebar , setSideBar,
-          searchClicked , setSearchClicked
+          searchClicked , setSearchClicked,
+          showSideBar  , setShowSidebar
         }
       }>
       {children}

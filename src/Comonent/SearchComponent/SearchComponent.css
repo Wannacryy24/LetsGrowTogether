@@ -49,3 +49,11 @@
 .search-result-div{
     margin-top: 10vh;
 }
+
+.search-inner-div{
+    width: 70vw;
+
+}
+.search-inner-div input {
+    width: 62%;
+}
