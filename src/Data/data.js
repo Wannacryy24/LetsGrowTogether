@@ -168,6 +168,7 @@ export function makeServer() {
             content: 'Asynchronous JavaScript allows for non-blocking execution of code, enabling developers to perform long-running operations without freezing the user interface. This is particularly useful for tasks like fetching data from APIs or reading files. JavaScript employs mechanisms such as callbacks, Promises, and async/await syntax to handle asynchronous operations. Callbacks were the original method, but they can lead to "callback hell," making code hard to read. Promises offer a cleaner way to manage asynchronous operations, while async/await syntax, introduced in ES8, provides a straightforward, synchronous-looking way to write asynchronous code. Mastering asynchronous JavaScript is crucial for creating responsive and efficient web applications.'
           }
         ],
+        
         '4': [
            {
             id: '4-1',
@@ -253,8 +254,6 @@ export function makeServer() {
           return { allTopics };
         }
       });
-
-
 
       this.get('/topics/:id', (schema, request) => {
         let topic = null;

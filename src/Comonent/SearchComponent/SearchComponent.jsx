@@ -26,18 +26,28 @@ export default function SearchComponent() {
         const query = e.target.value;
         setSearchQuery(query);
         };  
+
+
     const handleTopicClick = (topic) => {
+        const sectionId = topic.id.split('-')[0];
+        console.log(sectionId,'sectionID');
         navigate(`${topic.id}`);
         setSearchQuery('');
         setSideBar(null);
         setSearchClicked(!searchClicked);
     };
+
+
     const hideSearchBar = (e) => {
         setSearchClicked(false);
     }
+
+
     const preventHide = (e) => {
         e.stopPropagation();
     };
+
+
   return (
     <div className='Search-main-Div' onClick={hideSearchBar}>
         <div className='search-inner-div' onClick={preventHide}>
@@ -57,5 +67,3 @@ export default function SearchComponent() {
     </div>
   )
 }
-
-
