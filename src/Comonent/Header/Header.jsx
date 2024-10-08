@@ -10,12 +10,10 @@ import SearchComponent from '../SearchComponent/SearchComponent';
 export function HeaderComponent() {
     
     const navigate = useNavigate();
-    const {topics,setTopics,setSelectedSection,setSelectedTopic, setSideBar , searchClicked , setSearchClicked} =  useContext(SectionContext);
+    const {topics,setTopics,setSelectedSection,setSelectedTopic, setSideBar , searchClicked , setSearchClicked, refInput} =  useContext(SectionContext);
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredTopics, setFilteredTopics] = useState([]);
     const [liData , setLiData] = useState([]);
-    
-    
 
     useEffect(()=>{
         fetch('/api/sections')

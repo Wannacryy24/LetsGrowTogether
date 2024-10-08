@@ -3,6 +3,7 @@ export const SectionContext = createContext();
 
 export const SectionProvider = ({ children }) => {
   const ref = useRef();
+  const refInput = useRef();
   const [sections, setSections] = useState([]);  
   const [selectedSection, setSelectedSection] = useState(null); 
   const [topics, setTopics] = useState([]);  
@@ -15,7 +16,7 @@ export const SectionProvider = ({ children }) => {
           selectedTopic, setSelectedTopic,
           selectedSection, setSelectedSection,
           topics, setTopics,
-          ref,
+          ref,refInput,
           sidebar , setSideBar,
           searchClicked , setSearchClicked
         }

@@ -57,6 +57,7 @@
   padding: 40px;
   background-color: #1b1b1b;
   color: #c8c8c8;
+  min-height: 90vh;
 }
 .topic-detail h2{
   margin-bottom: 5vh;
