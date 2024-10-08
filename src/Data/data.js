@@ -3,14 +3,12 @@ import { createServer } from 'miragejs';
 export function makeServer() {
  return createServer({
     routes() {
-      this.namespace = 'api';
-
-      
+      this.namespace = 'api';      
       let sections = [
-        { id: '1', name: 'HTML' , img:'html.png'},
-        { id: '2', name: 'CSS' , img:'css.png'},
-        { id: '3', name: 'JavaScript' , img:'javascript.png'},
-        { id: '4', name: 'React' , img:'react.png'},
+        { id: '1', name: 'HTML' , img:'html.png', details:'HTML is the standard markup language for Web pages.'},
+        { id: '2', name: 'CSS' , img:'css.png', details:''},
+        { id: '3', name: 'JavaScript' , img:'javascript.png', details:''},
+        { id: '4', name: 'React' , img:'react.png', details:''},
       ];
 
       let topics = {

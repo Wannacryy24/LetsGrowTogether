@@ -1,5 +1,5 @@
 :root {
-  --primaryColor: #232323e3;
+  --primaryColor: #23272F;
   --secondaryColor: #22B0DD;
   --textColor: #c8c8c8;
   --white: #ffffff; 
@@ -12,11 +12,6 @@
     padding-top: 20vh;
     color: var(--white);
   }
-
-
-
-
-  
 
   .landingPage-div h1{
     padding: 0% 10%;

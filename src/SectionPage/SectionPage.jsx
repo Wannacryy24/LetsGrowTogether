@@ -50,7 +50,6 @@ const {sections, setSections ,selectedTopic, setSelectedTopic,selectedSection, s
       {
         // selectedSection ?         
         // <Topics topics={topics} selectedTopic={selectedTopic}/> :
-        
         sections.map((item) => (
           <div className="selectCourse-container" key={item.id}>
             {/* <div className="left-div"> */}
