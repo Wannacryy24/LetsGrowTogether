@@ -102,12 +102,14 @@ header{
     display: flex;
     position: absolute;
     top: 10vh;
-    right: 20vw;
+    right: 1vw;
     width: 40vw;
     background-color: white;
     color: black;
     flex-direction: column;
-    height: 70vh;
+    height: auto;
+    border-radius: 1rem;
+    padding: 1rem;
   } 
   .Header-search:hover{
     cursor: pointer;
