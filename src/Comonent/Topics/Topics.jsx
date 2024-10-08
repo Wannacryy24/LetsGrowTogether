@@ -12,9 +12,9 @@ export default function Topics() {
   const { sectionId , title ,id} = useParams();
   
   const navigate = useNavigate();
-  const [searchQuery, setSearchQuery] = useState(''); // State for search input  
+  const [searchQuery, setSearchQuery] = useState(''); 
   const [filteredTopics, setFilteredTopics] = useState([]);
-  const[isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const[isSidebarOpen, setIsSidebarOpen] = useState(true); // jb bhi topic click ho sidebar open 
   
   useEffect(()=>{
     setFilteredTopics(topics);
@@ -106,7 +106,7 @@ export default function Topics() {
   const handleTopicClick = (topic) => {
     navigate(`/section/${sectionId}/Topics/${topic.title}`);
     fetchTopicContent(topic.id); // slected topic ke content ko fetch karega
-    setIsSidebarOpen(!isSidebarOpen);
+    // setIsSidebarOpen(!isSidebarOpen);
   };
 
   const handleTOHome = () => {

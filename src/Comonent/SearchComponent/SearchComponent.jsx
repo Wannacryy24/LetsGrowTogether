@@ -4,9 +4,9 @@ import { SectionContext } from '../../ContextProvider/SectionContext';
 import { useNavigate } from 'react-router-dom';
 
 export default function SearchComponent() {
-    const { setSideBar , searchClicked , setSearchClicked, refInput} =  useContext(SectionContext);
+    const { setSideBar , searchClicked , setSearchClicked, refInput , setTopics, setSelectedTopic} =  useContext(SectionContext);
     const [searchQuery, setSearchQuery] = useState('');
-    const [searchedTopic , setSearchedTopics] =  useState({});
+    const [searchedTopic , setSearchedTopics] =  useState([]);
     useEffect(()=>{
         fetch(`/api/topics?q=${searchQuery}`)
         .then((response) => response.json())
@@ -27,10 +27,21 @@ export default function SearchComponent() {
         setSearchQuery(query);
         };  
     const handleTopicClick = (topic) => {
-        navigate(`${topic.id}`);
-        setSearchQuery('');
-        setSideBar(null);
-        setSearchClicked(!searchClicked);
+        fetch(`/api/sections/${topic.sectionId}/topics`)
+        .then((response) => response.json())
+        .then((data) => {
+          setTopics(data.topics);  // us section ke saare topics set karega
+          setSelectedTopic(topic); // clicked topic selected set
+  
+          navigate(`/section/${topic.sectionId}/Topics/${topic.title}`);  // clicked topic par navigate karega
+          setSideBar(true);  
+          setSearchClicked(false);  
+        })
+        .catch(error => console.error('topics not found:', error));
+            // navigate(`${topic.id}`);
+        // setSearchQuery('');
+        // setSideBar(null);
+        // setSearchClicked(!searchClicked);
     };
     const hideSearchBar = (e) => {
         setSearchClicked(false);
